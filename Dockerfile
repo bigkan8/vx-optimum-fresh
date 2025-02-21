@@ -26,6 +26,5 @@ RUN mkdir -p ${MODEL_PATH}
 # Expose the necessary port
 EXPOSE 8000
 
-# At startup, download the model folder from S3 and then run the FastAPI app
-CMD aws s3 cp ${MODEL_S3_URI} ${MODEL_PATH} --recursive && \
-    uvicorn api.routes:app --host 0.0.0.0 --port 8000
+# At startup, download the model folder in the background and then run the FastAPI app.
+CMD aws s3 cp ${MODEL_S3_URI} ${MODEL_PATH} --recursive & uvicorn api.routes:app --host 0.0.0.0 --port 8000
