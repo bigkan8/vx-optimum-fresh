@@ -7,7 +7,7 @@ from core.fact_checker import FactChecker
 from core.output_generator import OutputGenerator
 from utils.url_utils import URLProcessor
 from config.settings import ANALYSIS_SETTINGS, API_CONFIG
-from model_cache import ModelCache
+from core.model_cache import ModelCache
 import logging
 from openai import OpenAI
 
