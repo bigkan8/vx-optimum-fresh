@@ -2,7 +2,7 @@ import re
 import httpx
 from typing import Optional, List
 from urllib.parse import urlparse, urljoin
-from ..config.settings import Settings, URL_SETTINGS
+from config.settings import Settings, URL_SETTINGS
 from .logger import Logger
 
 logger = Logger(__name__)
