@@ -8,7 +8,7 @@ import re
 import json
 from openai import OpenAI
 from pydantic import BaseModel, Field
-from pinecone import Pinecone, Index
+from pinecone import Pinecone
 from config.prompts import RAG_ANALYSIS_PROMPT
 
 logger = Logger(__name__)
@@ -53,10 +53,9 @@ class MessageClassifier:
                 api_key=API_CONFIG["pinecone"]["api_key"]
             )
             
-            # Create or attach to the existing index
-            self.index = Index(
-                name=API_CONFIG["pinecone"]["index_name"],
-                pinecone_instance=pc
+            # Instantiate the existing index from the Pinecone instance
+            self.index = pc.Index(
+                API_CONFIG["pinecone"]["index_name"]
             )
             
             self.embedding_model = API_CONFIG["pinecone"]["embedding_model"]
