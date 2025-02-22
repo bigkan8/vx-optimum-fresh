@@ -8,7 +8,7 @@ import re
 import json
 from openai import OpenAI
 from pydantic import BaseModel, Field
-from pinecone import Pinecone
+import pinecone
 import logging
 from config.prompts import RAG_ANALYSIS_PROMPT
 

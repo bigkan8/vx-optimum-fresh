@@ -1,13 +1,13 @@
 from dataclasses import dataclass
 from typing import Optional, List, Dict, Any
 import asyncio
-from .url_analyzer import URLAnalyzer
-from .message_classifier import MessageClassifier
-from .fact_checker import FactChecker
-from .output_generator import OutputGenerator
+from url_analyzer import URLAnalyzer
+from message_classifier import MessageClassifier
+from fact_checker import FactChecker
+from output_generator import OutputGenerator
 from utils.url_utils import URLProcessor
 from config.settings import ANALYSIS_SETTINGS, API_CONFIG
-from .model_cache import ModelCache
+from model_cache import ModelCache
 import logging
 from openai import OpenAI
 
