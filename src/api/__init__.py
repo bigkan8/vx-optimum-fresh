@@ -1,3 +1,3 @@
-from routes import app
+from api.routes import app
 
 __all__ = ['app'] 
