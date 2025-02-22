@@ -20,6 +20,9 @@ ENV PORT=8000
 ENV MODEL_S3_URI="s3://verifiedx-models-bucket/optimum/"
 ENV MODEL_PATH="/app/models/optimum/"
 
+# Re-add PYTHONPATH so that the "/app/src" directory is on the import path
+ENV PYTHONPATH="/app/src"
+
 # Create a directory for your model files
 RUN mkdir -p ${MODEL_PATH}
 
