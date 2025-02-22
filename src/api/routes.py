@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional
-from ..core.detector import Detector
+from core.detector import Detector
 
 app = FastAPI(title="VerifiedX API")
 detector = Detector()
