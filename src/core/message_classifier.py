@@ -50,8 +50,11 @@ class MessageClassifier:
             )
             
             # Initialize Pinecone for RAG
-            self.pinecone = Pinecone(api_key=API_CONFIG["pinecone"]["api_key"])
-            self.index = self.pinecone.Index(API_CONFIG["pinecone"]["index_name"])
+            pinecone.init(
+                api_key=API_CONFIG["pinecone"]["api_key"],
+                environment=API_CONFIG["pinecone"]["environment"]
+            )
+            self.index = pinecone.Index(API_CONFIG["pinecone"]["index_name"])
             self.embedding_model = API_CONFIG["pinecone"]["embedding_model"]
             self.top_k = API_CONFIG["pinecone"]["top_k"]
             
@@ -142,7 +145,7 @@ class MessageClassifier:
             )
             
             # Parse and validate the response
-            result = MessageAnalysis.model_validate_json(completion.choices[0].message.content)
+            result = MessageAnalysis.parse_raw(completion.choices[0].message.content)
             
             return result.model_dump()
             
