@@ -6,9 +6,9 @@ It focuses on key technical details while maintaining a natural conversational s
 from typing import Dict, Any, Optional
 import json
 from openai import OpenAI
-from ..config.prompts import FINAL_ANALYSIS_PROMPT
-from ..config.settings import API_CONFIG
-from ..utils.character_selector import CharacterSelector
+from config.prompts import FINAL_ANALYSIS_PROMPT
+from config.settings import API_CONFIG
+from utils.character_selector import CharacterSelector
 import asyncio
 import tenacity
 from tenacity import retry, stop_after_attempt, wait_exponential

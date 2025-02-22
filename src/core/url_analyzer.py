@@ -1,9 +1,9 @@
 from typing import Dict, Any
 import json
 from openai import OpenAI
-from ..config.prompts import URL_ANALYSIS_PROMPT
-from ..config.settings import API_CONFIG, URL_SETTINGS
-from ..utils.logger import Logger
+from config.prompts import URL_ANALYSIS_PROMPT
+from config.settings import API_CONFIG, URL_SETTINGS
+from utils.logger import Logger
 import re
 from urllib.parse import urlparse, unquote
 import socket

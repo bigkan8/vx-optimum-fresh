@@ -1,6 +1,6 @@
 import torch
 from transformers import RobertaTokenizer, RobertaForSequenceClassification
-from ..config.settings import MODEL_SETTINGS
+from config.settings import MODEL_SETTINGS
 
 class ModelCache:
     _instance = None

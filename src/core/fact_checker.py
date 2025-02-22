@@ -1,9 +1,9 @@
 from typing import Dict, Any, List
 import json
 from openai import OpenAI
-from ..config.prompts import FACT_IDENTIFICATION_PROMPT, FACT_CHECK_PROMPT
-from ..config.settings import API_CONFIG, ANALYSIS_SETTINGS
-from ..utils.logger import Logger
+from config.prompts import FACT_IDENTIFICATION_PROMPT, FACT_CHECK_PROMPT
+from config.settings import API_CONFIG, ANALYSIS_SETTINGS
+from utils.logger import Logger
 
 logger = Logger(__name__)
 

@@ -2,15 +2,15 @@ from typing import Dict, Any, List
 import torch
 from transformers import RobertaForSequenceClassification, RobertaTokenizer
 import numpy as np
-from ..config.settings import MODEL_SETTINGS, API_CONFIG
-from ..utils.logger import Logger
+from config.settings import MODEL_SETTINGS, API_CONFIG
+from utils.logger import Logger
 import re
 import json
 from openai import OpenAI
 from pydantic import BaseModel, Field
 from pinecone import Pinecone
 import logging
-from ..config.prompts import RAG_ANALYSIS_PROMPT
+from config.prompts import RAG_ANALYSIS_PROMPT
 
 logger = Logger(__name__)
 
