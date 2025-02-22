@@ -31,8 +31,7 @@ API_CONFIG = {
         "api_key": os.getenv("PINECONE_API_KEY"),
         "index_name": "verifiedx",
         "embedding_model": "text-embedding-3-small",
-        "top_k": 1,
-        "environment": "eu-west-1"
+        "top_k": 1
     }
 }
 

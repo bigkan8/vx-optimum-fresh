@@ -8,8 +8,7 @@ import re
 import json
 from openai import OpenAI
 from pydantic import BaseModel, Field
-import pinecone
-import logging
+from pinecone import Pinecone
 from config.prompts import RAG_ANALYSIS_PROMPT
 
 logger = Logger(__name__)
@@ -49,12 +48,12 @@ class MessageClassifier:
                 timeout=openai_settings["timeout"]
             )
             
-            # Initialize Pinecone for RAG
-            pinecone.init(
-                api_key=API_CONFIG["pinecone"]["api_key"],
-                environment=API_CONFIG["pinecone"]["environment"]
+            # Create a Pinecone instance and retrieve your existing index
+            pc = Pinecone(
+                api_key=API_CONFIG["pinecone"]["api_key"]
             )
-            self.index = pinecone.Index(API_CONFIG["pinecone"]["index_name"])
+            self.index = pc.index(API_CONFIG["pinecone"]["index_name"])
+            
             self.embedding_model = API_CONFIG["pinecone"]["embedding_model"]
             self.top_k = API_CONFIG["pinecone"]["top_k"]
             

@@ -1,4 +1,4 @@
-torch>=2.0.0 --index-url https://download.pytorch.org/whl/cu121  # CUDA 12.1 support
+torch>=2.0.0
 transformers>=4.30.0
 aiohttp>=3.8.0
 numpy>=1.24.0
@@ -16,6 +16,6 @@ cryptography>=41.0.0  # For SSL certificate handling
 tenacity>=8.2.0  # For robust retry logic
 tldextract>=5.1.1  # For domain extraction and analysis
 langchain>=0.1.0  # For RAG implementation
-faiss-gpu-cu12[fix-cuda]  # CUDA 12.1 compatible version with fixed CUDA dependencies
+faiss-cpu
 tiktoken>=0.5.1  # For token counting
 pinecone>=3.0.0  # For vector similarity search 
